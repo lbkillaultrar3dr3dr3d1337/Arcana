@@ -299,8 +299,8 @@ local function drawCooldownStack(scrW, scrH)
 	local rowW, rowH = 260, 36
 	local gap = 8
 	
+	surface.SetFont("Arcana_Ancient")
 	for i = 1, #entries do 
-		surface.SetFont("Arcana_Ancient")
 		local w = surface.GetTextSize(entries[i].spell.name) + 90
 		if w > rowW then rowW = w end
 	end
