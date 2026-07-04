@@ -298,6 +298,13 @@ local function drawCooldownStack(scrW, scrH)
 	table.sort(entries, function(a, b) return a.remain < b.remain end)
 	local rowW, rowH = 260, 36
 	local gap = 8
+	
+	for i = 1, #entries do 
+		surface.SetFont("Arcana_Ancient")
+		local w = surface.GetTextSize(entries[i].spell.name) + 90
+		if w > rowW then rowW = w end
+	end
+	
 	local totalH = (#entries * rowH) + ((#entries - 1) * gap)
 	local cy = math.floor(scrH * 0.5)
 	local startY = cy - math.floor(totalH * 0.5)
